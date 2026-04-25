@@ -12,6 +12,11 @@ permissions:
 jobs:
   build_site:
     runs-on: ubuntu-latest
+    # AGGIUNGI QUESTE DUE RIGHE QUI SOTTO:
+    defaults:
+      run:
+        working-directory: app 
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -21,17 +26,21 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+          # AGGIUNGI ANCHE QUESTA RIGA QUI SOTTO:
+          cache-dependency-path: app/package-lock.json 
 
       - name: Install dependencies
         run: npm install
 
       - name: Build
         run: npm run build
-
+      
+      # ... (il resto del file rimane uguale, ma cambia il path dell'artifact)
+      
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # Vite genera i file qui
+          path: 'app/dist' # Aggiungi app/ davanti a dist
 
   deploy:
     needs: build_site
