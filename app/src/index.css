@@ -1,0 +1,292 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #0A0A0C;
+    --bg-secondary: #0F0D0E;
+    --bg-tertiary: #141014;
+    --surface: rgba(255, 255, 255, 0.04);
+    --surface-hover: rgba(255, 255, 255, 0.07);
+    --text-primary: #F2EBE1;
+    --text-secondary: rgba(242, 235, 225, 0.6);
+    --text-faded: rgba(242, 235, 225, 0.4);
+    --accent: #9B2D4C;
+    --accent-light: #C8556E;
+    --accent-warm: #B8973D;
+    --border-ghost: rgba(255, 255, 255, 0.08);
+    --border-subtle: rgba(255, 255, 255, 0.06);
+
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Source Sans 3', system-ui, sans-serif;
+
+    --background: 0 0% 4%;
+    --foreground: 30 30% 92%;
+    --card: 0 0% 4%;
+    --card-foreground: 30 30% 92%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 30 30% 92%;
+    --primary: 345 55% 38%;
+    --primary-foreground: 30 30% 92%;
+    --secondary: 300 7% 8%;
+    --secondary-foreground: 30 30% 92%;
+    --muted: 0 0% 8%;
+    --muted-foreground: 30 10% 60%;
+    --accent: 345 55% 38%;
+    --accent-foreground: 30 30% 92%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: 345 55% 38%;
+    --radius: 0.5rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.65;
+    letter-spacing: 0.2px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+  }
+}
+
+@layer components {
+  .label-accent {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent);
+  }
+
+  .label-faded {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--text-faded);
+  }
+
+  .heading-display {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 300;
+    letter-spacing: -2px;
+    line-height: 1.05;
+    color: var(--text-primary);
+  }
+
+  .heading-section {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+    color: var(--text-primary);
+  }
+
+  .heading-card {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--text-primary);
+  }
+
+  .body-text {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  .cta-primary {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 14px 36px;
+    border-radius: 100px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .cta-primary:hover {
+    background-color: var(--accent-light);
+  }
+
+  .cta-outline {
+    display: inline-block;
+    border: 1px solid rgba(242, 235, 225, 0.3);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 14px 36px;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    background: transparent;
+  }
+
+  .cta-outline:hover {
+    background: rgba(242, 235, 225, 0.08);
+  }
+
+  .section-padding {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+
+  .content-max {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .bg-primary-dark {
+    background-color: var(--bg-primary);
+  }
+
+  .bg-secondary-dark {
+    background-color: var(--bg-secondary);
+  }
+
+  .bg-tertiary-dark {
+    background-color: var(--bg-tertiary);
+  }
+
+  .text-parchment {
+    color: var(--text-primary);
+  }
+
+  .text-parchment-faded {
+    color: var(--text-faded);
+  }
+
+  .border-ghost {
+    border-color: var(--border-ghost);
+  }
+
+  .border-subtle {
+    border-color: var(--border-subtle);
+  }
+}
+
+/* Custom cursor */
+.custom-cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(242, 235, 225, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s;
+}
+
+.custom-cursor.hover {
+  width: 40px;
+  height: 40px;
+  border-color: rgba(242, 235, 225, 0.8);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-ghost);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faded);
+}
