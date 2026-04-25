@@ -107,7 +107,7 @@ function Hero() {
         className="absolute inset-0 w-full h-full object-cover"
         style={{ zIndex: 0 }}
       >
-        <source src="/images/vid-hero-ink.mp4" type="video/mp4" />
+        <source src="images/vid-hero-ink.mp4" type="video/mp4" />
       </video>
       {/* Dark overlay for readability */}
       <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to bottom, rgba(10,10,12,0.3) 0%, rgba(10,10,12,0.6) 60%, rgba(10,10,12,0.95) 100%)' }} />
@@ -170,7 +170,7 @@ function EsperienzaLive() {
         {/* Hero image of live gameplay */}
         <div className="live-img w-full overflow-hidden rounded-lg mb-20" style={{ aspectRatio: '16/9' }}>
           <img
-            src="/images/img-live-experience.jpg"
+            src="images/img-live-experience.jpg"
             alt="Giocatori che cercano indizi tra gli scaffali della libreria"
             className="w-full h-full object-cover"
           />
